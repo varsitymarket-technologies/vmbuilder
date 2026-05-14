@@ -1,0 +1,126 @@
+{
+    "name": "Restaurant & Local Business",
+    "slug": "restaurant",
+    "description": "Warm, inviting layout with menu, map, hours, and gallery.",
+    "thumbnail": "",
+    "settings": {
+        "primaryColor": "#92400e",
+        "fontFamily": "Georgia, serif"
+    },
+    "pages": [
+        {
+            "name": "Home",
+            "slug": "home",
+            "seo": {
+                "title": "The Golden Table - Restaurant",
+                "description": "Fine dining experience with locally sourced ingredients"
+            },
+            "components": [
+                {
+                    "id": "nav1",
+                    "type": "navbar",
+                    "props": {
+                        "logo": "",
+                        "logoText": "The Golden Table",
+                        "backgroundColor": "#1c1917",
+                        "textColor": "#fbbf24",
+                        "sticky": true
+                    }
+                },
+                {
+                    "id": "hero1",
+                    "type": "hero",
+                    "props": {
+                        "heading": "A Taste of Excellence",
+                        "subheading": "Farm-to-table dining in the heart of the city",
+                        "ctaText": "Reserve a Table",
+                        "ctaUrl": "#contact",
+                        "backgroundImage": "",
+                        "backgroundColor": "#292524",
+                        "textColor": "#fef3c7",
+                        "overlay": true
+                    }
+                },
+                {
+                    "id": "feat1",
+                    "type": "features",
+                    "props": {
+                        "heading": "Our Specialties",
+                        "columns": 3,
+                        "items": [
+                            {"icon": "🥩", "title": "Prime Steaks", "description": "Dry-aged for 28 days, cooked to perfection over open flame."},
+                            {"icon": "🐟", "title": "Fresh Seafood", "description": "Daily catch from local fishermen, prepared with care."},
+                            {"icon": "🍷", "title": "Fine Wines", "description": "Curated selection of over 200 wines from around the world."}
+                        ]
+                    }
+                },
+                {
+                    "id": "gal1",
+                    "type": "gallery",
+                    "props": {
+                        "columns": 3,
+                        "gap": 4,
+                        "images": []
+                    }
+                },
+                {
+                    "id": "head1",
+                    "type": "heading",
+                    "props": {
+                        "text": "Visit Us",
+                        "level": "h2",
+                        "alignment": "center",
+                        "color": "#292524"
+                    }
+                },
+                {
+                    "id": "text1",
+                    "type": "text",
+                    "props": {
+                        "content": "<p><strong>Hours:</strong></p><p>Monday - Thursday: 5:00 PM - 10:00 PM</p><p>Friday - Saturday: 5:00 PM - 11:00 PM</p><p>Sunday: 4:00 PM - 9:00 PM</p><br><p><strong>Address:</strong></p><p>123 Main Street, Downtown</p><p>Phone: (555) 123-4567</p>",
+                        "alignment": "center"
+                    }
+                },
+                {
+                    "id": "map1",
+                    "type": "map",
+                    "props": {
+                        "address": "123 Main Street, Downtown",
+                        "height": 350
+                    }
+                },
+                {
+                    "id": "form1",
+                    "type": "contact_form",
+                    "props": {
+                        "heading": "Make a Reservation",
+                        "fields": [
+                            {"name": "name", "label": "Name", "type": "text", "required": true},
+                            {"name": "email", "label": "Email", "type": "email", "required": true},
+                            {"name": "phone", "label": "Phone", "type": "tel", "required": true},
+                            {"name": "message", "label": "Party size & preferred date/time", "type": "textarea", "required": true}
+                        ],
+                        "submitText": "Request Reservation",
+                        "successMessage": "Thank you! We'll confirm your reservation shortly."
+                    }
+                },
+                {
+                    "id": "foot1",
+                    "type": "footer",
+                    "props": {
+                        "text": "© 2026 The Golden Table. All rights reserved.",
+                        "backgroundColor": "#1c1917",
+                        "textColor": "#a8a29e",
+                        "links": [
+                            {"label": "Privacy Policy", "url": "#"}
+                        ],
+                        "socialLinks": [
+                            {"platform": "facebook", "url": "#"},
+                            {"platform": "instagram", "url": "#"}
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "name": "Noir Minimal",
+    "slug": "noir-minimal",
+    "description": "Premium dark aesthetic with high-contrast typography and minimalist layout.",
+    "thumbnail": "/assets/img/noir-minimal.png",
+    "settings": {
+        "primaryColor": "#000000",
+        "accentColor": "#ffffff",
+        "backgroundColor": "#0a0a0a",
+        "textColor": "#f5f5f5"
+    },
+    "pages": [
+        {
+            "name": "Home",
+            "slug": "home",
+            "seo": {
+                "title": "Aethel | Elegance in Simplicity",
+                "description": "Crafting timeless objects for the modern space."
+            },
+            "components": [
+                {
+                    "id": "noir-nav",
+                    "type": "navbar",
+                    "props": {
+                        "logo": "",
+                        "logoText": "AETHEL",
+                        "backgroundColor": "#0a0a0a",
+                        "textColor": "#f5f5f5",
+                        "sticky": true
+                    }
+                },
+                {
+                    "id": "noir-hero",
+                    "type": "hero",
+                    "props": {
+                        "heading": "Elegance in Simplicity",
+                        "subheading": "Crafting timeless objects for the modern space.",
+                        "ctaText": "Explore the Collection",
+                        "ctaUrl": "#",
+                        "backgroundImage": "",
+                        "backgroundColor": "#0a0a0a",
+                        "textColor": "#ffffff",
+                        "overlay": false
+                    }
+                },
+                {
+                    "id": "noir-sep",
+                    "type": "spacer",
+                    "props": { "height": 60 }
+                },
+                {
+                    "id": "noir-head-1",
+                    "type": "heading",
+                    "props": {
+                        "text": "The Monolith Collection",
+                        "level": "h2",
+                        "alignment": "center",
+                        "color": "#ffffff"
+                    }
+                },
+                {
+                    "id": "noir-grid",
+                    "type": "gallery",
+                    "props": {
+                        "columns": 3,
+                        "gap": 16,
+                        "images": [
+                            { "src": "https://images.unsplash.com/photo-1518005020480-10992897362e?q=80&w=600", "alt": "Minimal Architecture" },
+                            { "src": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=600", "alt": "Brutalist Design" },
+                            { "src": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600", "alt": "Soft Lighting" }
+                        ]
+                    }
+                },
+                {
+                    "id": "noir-footer",
+                    "type": "footer",
+                    "props": {
+                        "text": "© 2026 AETHEL. Powered by Noir Studio.",
+                        "backgroundColor": "#000000",
+                        "textColor": "#666666",
+                        "links": [
+                            { "label": "Archive", "url": "#" },
+                            { "label": "Philosophy", "url": "#" }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

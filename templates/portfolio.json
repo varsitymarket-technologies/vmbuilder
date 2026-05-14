@@ -1,0 +1,108 @@
+{
+    "name": "Portfolio",
+    "slug": "portfolio",
+    "description": "Minimal portfolio with gallery, about section, and contact form.",
+    "thumbnail": "",
+    "settings": {
+        "primaryColor": "#000000",
+        "accentColor": "#6366f1"
+    },
+    "pages": [
+        {
+            "name": "Home",
+            "slug": "home",
+            "seo": {
+                "title": "Portfolio",
+                "description": "Creative portfolio showcase"
+            },
+            "components": [
+                {
+                    "id": "nav1",
+                    "type": "navbar",
+                    "props": {
+                        "logo": "",
+                        "logoText": "Jane Doe",
+                        "backgroundColor": "#000000",
+                        "textColor": "#ffffff",
+                        "sticky": true
+                    }
+                },
+                {
+                    "id": "hero1",
+                    "type": "hero",
+                    "props": {
+                        "heading": "Creative Designer & Developer",
+                        "subheading": "Crafting beautiful digital experiences",
+                        "ctaText": "View My Work",
+                        "ctaUrl": "#gallery",
+                        "backgroundImage": "",
+                        "backgroundColor": "#000000",
+                        "textColor": "#ffffff",
+                        "overlay": false
+                    }
+                },
+                {
+                    "id": "head1",
+                    "type": "heading",
+                    "props": {
+                        "text": "Selected Work",
+                        "level": "h2",
+                        "alignment": "center",
+                        "color": "#111827"
+                    }
+                },
+                {
+                    "id": "spacer1",
+                    "type": "spacer",
+                    "props": {"height": 20}
+                },
+                {
+                    "id": "gal1",
+                    "type": "gallery",
+                    "props": {
+                        "columns": 3,
+                        "gap": 8,
+                        "images": []
+                    }
+                },
+                {
+                    "id": "about1",
+                    "type": "text",
+                    "props": {
+                        "content": "<h2>About Me</h2><p>I'm a creative designer and developer with over 10 years of experience building beautiful, functional websites and applications. I specialize in clean, modern design with a focus on user experience.</p><p>When I'm not designing, you can find me exploring new technologies, reading, or hiking in the mountains.</p>",
+                        "alignment": "center"
+                    }
+                },
+                {
+                    "id": "form1",
+                    "type": "contact_form",
+                    "props": {
+                        "heading": "Let's Work Together",
+                        "fields": [
+                            {"name": "name", "label": "Your Name", "type": "text", "required": true},
+                            {"name": "email", "label": "Email", "type": "email", "required": true},
+                            {"name": "message", "label": "Tell me about your project", "type": "textarea", "required": true}
+                        ],
+                        "submitText": "Send Message",
+                        "successMessage": "Thanks for reaching out! I'll get back to you soon."
+                    }
+                },
+                {
+                    "id": "foot1",
+                    "type": "footer",
+                    "props": {
+                        "text": "© 2026 Jane Doe. All rights reserved.",
+                        "backgroundColor": "#000000",
+                        "textColor": "#9ca3af",
+                        "links": [],
+                        "socialLinks": [
+                            {"platform": "instagram", "url": "#"},
+                            {"platform": "twitter", "url": "#"},
+                            {"platform": "linkedin", "url": "#"}
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

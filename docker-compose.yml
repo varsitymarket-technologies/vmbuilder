@@ -1,0 +1,24 @@
+version: '3'
+services:
+# Use Docker Compose
+  php-apache:
+    container_name: vm-builder
+    image: sigblue/apache-php:83-full
+    restart: unless-stopped
+    ports:
+      - 9009:80
+    volumes:
+      - ./public:/var/www/html/public/
+      - ./storage:/var/www/html/storage/
+      - ./templates:/var/www/html/templates/
+      - ./src:/var/www/html/src/
+      - ./vmbuilder:/var/www/html/vmbuilder/
+      - ./config.php:/var/www/html/config.php
+      - ./router.php:/var/www/html/router.php
+      - ./tests:/var/www/html/tests/
+      - ./:/var/www/html/
+    environment:
+      # gd is already included here, along with other specified extensions
+      PHP_EXTENSIONS: pgsql gettext imap sockets zip curl dom gd exif intl mbstring bcmath opcache soap xml xmlrpc fileinfo pdo_sqlite pdo_mysql pdo_pgsql
+      PECL_EXTENSION: sodium
+      STARTUP_COMMAND_1: composer install

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aethel | Elegance in Simplicity</title>
+    <meta name="description" content="Crafting timeless objects for the modern space.">
+    <meta name="keywords" content="">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .lightbox-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; cursor:pointer; }
+        .lightbox-overlay.active { display:flex; }
+        .lightbox-overlay img { max-width:90vw; max-height:90vh; object-fit:contain; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+<nav class="sticky top-0 z-50 shadow-sm" style="background-color:#0a0a0a;color:#f5f5f5">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div><span class="text-xl font-bold">AETHEL</span></div>
+        <div class="flex gap-6 text-sm font-medium"><a href="index.html" class="hover:opacity-75">Home</a> </div>
+    </div>
+</nav>
+<section class="relative min-h-[500px] flex items-center justify-center text-center" style="background-color:#0a0a0a;color:#ffffff">
+    
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+        <h1 class="text-5xl font-bold mb-4">Elegance in Simplicity</h1>
+        <p class="text-xl opacity-90">Crafting timeless objects for the modern space.</p>
+        <a href="#" class="inline-block mt-6 px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition">Explore the Collection</a>
+    </div>
+</section>
+<div style="height:60px"></div>
+<div class="max-w-6xl mx-auto px-4 py-4 text-center"><h2 class="text-3xl font-bold" style="color:#ffffff">The Monolith Collection</h2></div>
+<div class="max-w-6xl mx-auto px-4 py-4 grid grid-cols-3" style="gap:16px"><img src="https://images.unsplash.com/photo-1518005020480-10992897362e?q=80&amp;w=600" alt="Minimal Architecture" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&amp;w=600" alt="Brutalist Design" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&amp;w=600" alt="Soft Lighting" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="" alt="" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="" alt="" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="" alt="" class="w-full h-64 object-cover rounded-lg" data-lightbox></div>
+<footer style="background-color:#000000;color:#666666">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-sm">© 2026 AETHEL. Powered by Noir Studio.</div>
+            <div class="flex gap-4 text-sm"><a href="#" class="hover:underline">Archive</a> <a href="#" class="hover:underline">Philosophy</a> </div>
+            <div class="flex gap-3 font-bold"></div>
+        </div>
+    </div>
+</footer>
+
+<div class="lightbox-overlay" onclick="this.classList.remove('active')"><img src="" alt=""></div>
+<script>
+document.querySelectorAll('[data-lightbox]').forEach(function(img){
+    img.style.cursor='pointer';
+    img.addEventListener('click',function(){
+        var overlay=document.querySelector('.lightbox-overlay');
+        overlay.querySelector('img').src=this.src;
+        overlay.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <meta name="description" content="Creative portfolio showcase">
+    <meta name="keywords" content="">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .lightbox-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; cursor:pointer; }
+        .lightbox-overlay.active { display:flex; }
+        .lightbox-overlay img { max-width:90vw; max-height:90vh; object-fit:contain; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+<section class="relative min-h-[500px] flex items-center justify-center text-center" style="background-color:#000000;color:#ffffff">
+    
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+        <h1 class="text-5xl font-bold mb-4">Creative Designer &amp; Developer</h1>
+        <p class="text-xl opacity-90">Crafting beautiful digital experiences</p>
+        <a href="#gallery" class="inline-block mt-6 px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition">View My Work</a>
+    </div>
+</section>
+<div class="max-w-6xl mx-auto px-4 py-4 text-center"><h2 class="text-3xl font-bold" style="color:#111827">TESTING THE CONTENTS FIRST </h2></div>
+<div style="height:20px"></div>
+<div class="max-w-6xl mx-auto px-4 py-4 grid grid-cols-3" style="gap:8px"><img src="" alt="" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="" alt="" class="w-full h-64 object-cover rounded-lg" data-lightbox><img src="" alt="" class="w-full h-64 object-cover rounded-lg" data-lightbox></div>
+<div class="max-w-6xl mx-auto px-4 py-4 text-center prose prose-lg"><h2>About Me</h2><p>I'm a creative designer and developer with over 10 years of experience building beautiful, functional websites and applications. I specialize in clean, modern design with a focus on user experience.</p><p>When I'm not designing, you can find me exploring new technologies, reading, or hiking in the mountains.</p></div>
+<section class="py-16">
+    <div class="max-w-xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Let&#039;s Work Together</h2>
+        <form class="contact-form" onsubmit="return handleFormSubmit(this, 'Thanks for reaching out! I&#039;ll get back to you soon.')">
+            <div class="mb-4"><label class="block text-sm font-medium mb-1">Your Name</label><input type="text" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></div><div class="mb-4"><label class="block text-sm font-medium mb-1">Email</label><input type="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></div><div class="mb-4"><label class="block text-sm font-medium mb-1">Tell me about your project</label><textarea name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea></div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition">Send Message</button>
+            <div class="form-success hidden mt-4 p-4 bg-green-50 text-green-700 rounded-lg text-center"></div>
+        </form>
+    </div>
+</section>
+<script>
+function handleFormSubmit(form, msg) {
+    var data = new FormData(form);
+    fetch(form.action || window.location.origin + '/api.php?action=form_submit', {
+        method: 'POST', body: data
+    }).then(function(){
+        var el = form.querySelector('.form-success');
+        el.textContent = msg;
+        el.classList.remove('hidden');
+        form.reset();
+    });
+    return false;
+}
+</script>
+<footer style="background-color:#000000;color:#9ca3af">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-sm">© 2026 Jane Doe. All rights reserved.</div>
+            <div class="flex gap-4 text-sm"></div>
+            <div class="flex gap-3 font-bold"><a href="#" class="hover:opacity-75">IG</a> <a href="#" class="hover:opacity-75">X</a> <a href="#" class="hover:opacity-75">LI</a> </div>
+        </div>
+    </div>
+</footer>
+
+<div class="lightbox-overlay" onclick="this.classList.remove('active')"><img src="" alt=""></div>
+<script>
+document.querySelectorAll('[data-lightbox]').forEach(function(img){
+    img.style.cursor='pointer';
+    img.addEventListener('click',function(){
+        var overlay=document.querySelector('.lightbox-overlay');
+        overlay.querySelector('img').src=this.src;
+        overlay.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

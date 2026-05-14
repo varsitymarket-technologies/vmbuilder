@@ -1,0 +1,116 @@
+{
+    "name": "Business Landing Page",
+    "slug": "business-site",
+    "description": "Professional landing page with hero, features, testimonials, pricing, and contact form.",
+    "thumbnail": "",
+    "settings": {
+        "primaryColor": "#3b82f6",
+        "fontFamily": "system-ui"
+    },
+    "pages": [
+        {
+            "name": "Home",
+            "slug": "home",
+            "seo": {
+                "title": "Business Landing Page",
+                "description": "Professional business website"
+            },
+            "components": [
+                {
+                    "id": "nav1",
+                    "type": "navbar",
+                    "props": {
+                        "logo": "",
+                        "logoText": "BusinessCo",
+                        "backgroundColor": "#ffffff",
+                        "textColor": "#111827",
+                        "sticky": true
+                    }
+                },
+                {
+                    "id": "hero1",
+                    "type": "hero",
+                    "props": {
+                        "heading": "Grow Your Business With Us",
+                        "subheading": "We provide innovative solutions to help your business thrive in the digital age.",
+                        "ctaText": "Get Started",
+                        "ctaUrl": "#contact",
+                        "backgroundImage": "",
+                        "backgroundColor": "#1e40af",
+                        "textColor": "#ffffff",
+                        "overlay": false
+                    }
+                },
+                {
+                    "id": "feat1",
+                    "type": "features",
+                    "props": {
+                        "heading": "Why Choose Us",
+                        "columns": 3,
+                        "items": [
+                            {"icon": "⚡", "title": "Lightning Fast", "description": "Our solutions are optimized for speed and performance."},
+                            {"icon": "🔒", "title": "Secure & Reliable", "description": "Enterprise-grade security to protect your data."},
+                            {"icon": "📱", "title": "Mobile First", "description": "Fully responsive designs that work on any device."}
+                        ]
+                    }
+                },
+                {
+                    "id": "test1",
+                    "type": "testimonials",
+                    "props": {
+                        "heading": "What Our Clients Say",
+                        "items": [
+                            {"quote": "The best decision we made for our company. Results exceeded all expectations.", "name": "Sarah Johnson", "role": "CEO, TechStart", "photo": ""},
+                            {"quote": "Professional, reliable, and innovative. Highly recommended for any business.", "name": "Michael Chen", "role": "Founder, DesignHub", "photo": ""}
+                        ]
+                    }
+                },
+                {
+                    "id": "price1",
+                    "type": "pricing",
+                    "props": {
+                        "heading": "Simple Pricing",
+                        "plans": [
+                            {"name": "Starter", "price": "$29/mo", "features": ["5 Projects", "Basic Analytics", "Email Support"], "highlighted": false, "ctaText": "Start Free", "ctaUrl": "#"},
+                            {"name": "Professional", "price": "$79/mo", "features": ["Unlimited Projects", "Advanced Analytics", "Priority Support", "Custom Domain"], "highlighted": true, "ctaText": "Get Started", "ctaUrl": "#"},
+                            {"name": "Enterprise", "price": "$199/mo", "features": ["Everything in Pro", "Dedicated Manager", "SLA Guarantee", "Custom Integration"], "highlighted": false, "ctaText": "Contact Us", "ctaUrl": "#contact"}
+                        ]
+                    }
+                },
+                {
+                    "id": "form1",
+                    "type": "contact_form",
+                    "props": {
+                        "heading": "Get In Touch",
+                        "fields": [
+                            {"name": "name", "label": "Full Name", "type": "text", "required": true},
+                            {"name": "email", "label": "Email Address", "type": "email", "required": true},
+                            {"name": "phone", "label": "Phone Number", "type": "tel", "required": false},
+                            {"name": "message", "label": "How can we help?", "type": "textarea", "required": true}
+                        ],
+                        "submitText": "Send Message",
+                        "successMessage": "Thanks! We'll get back to you within 24 hours."
+                    }
+                },
+                {
+                    "id": "foot1",
+                    "type": "footer",
+                    "props": {
+                        "text": "© 2026 BusinessCo. All rights reserved.",
+                        "backgroundColor": "#111827",
+                        "textColor": "#9ca3af",
+                        "links": [
+                            {"label": "Privacy Policy", "url": "#"},
+                            {"label": "Terms of Service", "url": "#"}
+                        ],
+                        "socialLinks": [
+                            {"platform": "facebook", "url": "#"},
+                            {"platform": "twitter", "url": "#"},
+                            {"platform": "linkedin", "url": "#"}
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

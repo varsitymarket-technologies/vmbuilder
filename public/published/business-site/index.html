@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Landing Page</title>
+    <meta name="description" content="Professional business website">
+    <meta name="keywords" content="">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .lightbox-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; cursor:pointer; }
+        .lightbox-overlay.active { display:flex; }
+        .lightbox-overlay img { max-width:90vw; max-height:90vh; object-fit:contain; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+<nav class="sticky top-0 z-50 shadow-sm" style="background-color:#ffffff;color:#111827">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div><span class="text-xl font-bold">BusinessCo</span></div>
+        <div class="flex gap-6 text-sm font-medium"><a href="index.html" class="hover:opacity-75">Home</a> </div>
+    </div>
+</nav>
+<section class="relative min-h-[500px] flex items-center justify-center text-center" style="background-color:#613583;color:#ffffff">
+    
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+        <h1 class="text-5xl font-bold mb-4">Grow Your Business With Us</h1>
+        <p class="text-xl opacity-90">We provide innovative solutions to help your business thrive in the digital age.</p>
+        <a href="#contact" class="inline-block mt-6 px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition">PROCEEDIG WITH THE EXEC</a>
+    </div>
+</section>
+<section class="py-16 bg-gray-50"><div class="max-w-6xl mx-auto px-4"><h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2><div class="grid md:grid-cols-3 gap-8"><div class="text-center p-6"><div class="text-4xl mb-4">⚡</div><h3 class="text-xl font-semibold mb-2">Lightning Fast</h3><p class="text-gray-600">Our solutions are optimized for speed and performance.</p></div><div class="text-center p-6"><div class="text-4xl mb-4">🔒</div><h3 class="text-xl font-semibold mb-2">Secure &amp; Reliable</h3><p class="text-gray-600">Enterprise-grade security to protect your data.</p></div><div class="text-center p-6"><div class="text-4xl mb-4">📱</div><h3 class="text-xl font-semibold mb-2">Mobile First</h3><p class="text-gray-600">Fully responsive designs that work on any device.</p></div></div></div></section>
+<section class="py-16"><div class="max-w-6xl mx-auto px-4"><h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2><div class="grid md:grid-cols-2 gap-8"><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-gray-600 italic mb-4">"The best decision we made for our company. Results exceeded all expectations."</p><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold">S</div><div><div class="font-semibold">Sarah Johnson</div><div class="text-sm text-gray-500">CEO, TechStart</div></div></div></div><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-gray-600 italic mb-4">"Professional, reliable, and innovative. Highly recommended for any business."</p><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold">M</div><div><div class="font-semibold">Michael Chen</div><div class="text-sm text-gray-500">Founder, DesignHub</div></div></div></div></div></div></section>
+<section class="py-16 bg-gray-50"><div class="max-w-5xl mx-auto px-4"><h2 class="text-3xl font-bold text-center mb-12">Simple Pricing</h2><div class="grid md:grid-cols-3 gap-8 items-start"><div class="border-gray-200 border rounded-2xl p-8 bg-white"><h3 class="text-xl font-bold mb-2">Starter</h3><div class="text-3xl font-bold mb-6">$29/mo</div><ul class="mb-8 text-gray-600"><li class="py-2 border-b border-gray-100">5 Projects</li><li class="py-2 border-b border-gray-100">Basic Analytics</li><li class="py-2 border-b border-gray-100">Email Support</li></ul><a href="#" class="block text-center py-3 rounded-lg font-semibold bg-gray-900 text-white hover:opacity-90 transition">Start Free</a></div><div class="border-blue-500 border-2 scale-105 rounded-2xl p-8 bg-white"><h3 class="text-xl font-bold mb-2">Professional</h3><div class="text-3xl font-bold mb-6">$79/mo</div><ul class="mb-8 text-gray-600"><li class="py-2 border-b border-gray-100">Unlimited Projects</li><li class="py-2 border-b border-gray-100">Advanced Analytics</li><li class="py-2 border-b border-gray-100">Priority Support</li><li class="py-2 border-b border-gray-100">Custom Domain</li></ul><a href="#" class="block text-center py-3 rounded-lg font-semibold bg-blue-500 text-white hover:opacity-90 transition">Get Started</a></div><div class="border-gray-200 border rounded-2xl p-8 bg-white"><h3 class="text-xl font-bold mb-2">Enterprise</h3><div class="text-3xl font-bold mb-6">$199/mo</div><ul class="mb-8 text-gray-600"><li class="py-2 border-b border-gray-100">Everything in Pro</li><li class="py-2 border-b border-gray-100">Dedicated Manager</li><li class="py-2 border-b border-gray-100">SLA Guarantee</li><li class="py-2 border-b border-gray-100">Custom Integration</li></ul><a href="#contact" class="block text-center py-3 rounded-lg font-semibold bg-gray-900 text-white hover:opacity-90 transition">Contact Us</a></div></div></div></section>
+<section class="py-16">
+    <div class="max-w-xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Get In Touch</h2>
+        <form class="contact-form" onsubmit="return handleFormSubmit(this, 'Thanks! We&#039;ll get back to you within 24 hours.')">
+            <div class="mb-4"><label class="block text-sm font-medium mb-1">Full Name</label><input type="text" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></div><div class="mb-4"><label class="block text-sm font-medium mb-1">Email Address</label><input type="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></div><div class="mb-4"><label class="block text-sm font-medium mb-1">Phone Number</label><input type="tel" name="phone" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" ></div><div class="mb-4"><label class="block text-sm font-medium mb-1">How can we help?</label><textarea name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea></div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition">Send Message</button>
+            <div class="form-success hidden mt-4 p-4 bg-green-50 text-green-700 rounded-lg text-center"></div>
+        </form>
+    </div>
+</section>
+<script>
+function handleFormSubmit(form, msg) {
+    var data = new FormData(form);
+    fetch(form.action || window.location.origin + '/api.php?action=form_submit', {
+        method: 'POST', body: data
+    }).then(function(){
+        var el = form.querySelector('.form-success');
+        el.textContent = msg;
+        el.classList.remove('hidden');
+        form.reset();
+    });
+    return false;
+}
+</script>
+<footer style="background-color:#111827;color:#9ca3af">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-sm">© 2026 BusinessCo. All rights reserved.</div>
+            <div class="flex gap-4 text-sm"><a href="#" class="hover:underline">Privacy Policy</a> <a href="#" class="hover:underline">Terms of Service</a> </div>
+            <div class="flex gap-3 font-bold"><a href="#" class="hover:opacity-75">FB</a> <a href="#" class="hover:opacity-75">X</a> <a href="#" class="hover:opacity-75">LI</a> </div>
+        </div>
+    </div>
+</footer>
+
+<div class="lightbox-overlay" onclick="this.classList.remove('active')"><img src="" alt=""></div>
+<script>
+document.querySelectorAll('[data-lightbox]').forEach(function(img){
+    img.style.cursor='pointer';
+    img.addEventListener('click',function(){
+        var overlay=document.querySelector('.lightbox-overlay');
+        overlay.querySelector('img').src=this.src;
+        overlay.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>
