@@ -303,6 +303,28 @@ Database::migrate();
                             <input type="text" placeholder="e.g. bg-blue-500" :value="getTwProp('bg')" @input="updateTwProp('bg', $event.target.value)">
                         </div>
                         <div class="prop-field">
+                            <label>Text Size</label>
+                            <select :value="getTwProp('text_size')" @change="updateTwProp('text_size', $event.target.value)">
+                                <option value="">Default</option>
+                                <option value="text-sm">Small (text-sm)</option>
+                                <option value="text-base">Base (text-base)</option>
+                                <option value="text-lg">Large (text-lg)</option>
+                                <option value="text-xl">Extra Large (text-xl)</option>
+                                <option value="text-2xl">2x Large (text-2xl)</option>
+                                <option value="text-4xl">4x Large (text-4xl)</option>
+                            </select>
+                        </div>
+                        <div class="prop-field">
+                            <label>Font Weight</label>
+                            <select :value="getTwProp('font_weight')" @change="updateTwProp('font_weight', $event.target.value)">
+                                <option value="">Default</option>
+                                <option value="font-normal">Normal</option>
+                                <option value="font-medium">Medium</option>
+                                <option value="font-semibold">Semibold</option>
+                                <option value="font-bold">Bold</option>
+                            </select>
+                        </div>
+                        <div class="prop-field">
                             <label>Text Color</label>
                             <input type="text" placeholder="e.g. text-white" :value="getTwProp('text_color')" @input="updateTwProp('text_color', $event.target.value)">
                         </div>
@@ -316,6 +338,30 @@ Database::migrate();
                                 <option value="rounded-xl">Extra Large</option>
                                 <option value="rounded-full">Full</option>
                             </select>
+                        </div>
+                        <div class="prop-field">
+                            <label>Box Shadow</label>
+                            <select :value="getTwProp('shadow')" @change="updateTwProp('shadow', $event.target.value)">
+                                <option value="">None</option>
+                                <option value="shadow-sm">Small</option>
+                                <option value="shadow">Medium</option>
+                                <option value="shadow-md">Large</option>
+                                <option value="shadow-lg">Extra Large</option>
+                                <option value="shadow-xl">2x Large</option>
+                            </select>
+                        </div>
+                        <div class="prop-field">
+                            <label>Border Width & Color</label>
+                            <div style="display:flex;gap:8px">
+                                <select :value="getTwProp('border_width')" @change="updateTwProp('border_width', $event.target.value)" style="flex:1">
+                                    <option value="">None</option>
+                                    <option value="border">1px</option>
+                                    <option value="border-2">2px</option>
+                                    <option value="border-4">4px</option>
+                                    <option value="border-8">8px</option>
+                                </select>
+                                <input type="text" placeholder="border-gray-200" :value="getTwProp('border_color')" @input="updateTwProp('border_color', $event.target.value)" style="flex:1">
+                            </div>
                         </div>
                         <div class="prop-field">
                             <label>Custom Classes</label>

@@ -66,6 +66,7 @@ class Publisher {
     <meta name="keywords" content="{$keywords}">
     {$faviconTag}
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; }
         .lightbox-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; cursor:pointer; }
@@ -268,6 +269,89 @@ HTML;
             $childHtml .= '<div>' . $this->renderComponent($child) . '</div>';
         }
         return "<div class=\"max-w-6xl mx-auto px-4 py-4 grid {$grid}\" style=\"gap:{$gap}px\">{$childHtml}</div>";
+    }
+
+    private function renderCard(array $p): string {
+        $twClasses = $this->getTwClasses($p);
+        $title = htmlspecialchars($p['title'] ?? '');
+        $desc = htmlspecialchars($p['description'] ?? '');
+        $imgSrc = $p['image'] ?? '';
+        $btnText = htmlspecialchars($p['buttonText'] ?? '');
+        $btnLink = htmlspecialchars($p['buttonLink'] ?? '#');
+
+        $imgHtml = $imgSrc ? "<img src=\"" . htmlspecialchars($imgSrc) . "\" class=\"w-full h-48 object-cover rounded-t-lg\" alt=\"{$title}\">" : '';
+        $btnHtml = $btnText ? "<a href=\"{$btnLink}\" class=\"text-blue-600 font-semibold hover:underline mt-4 inline-block\">{$btnText} &rarr;</a>" : '';
+
+        return <<<HTML
+<div class="{$twClasses}">
+    {$imgHtml}
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">{$title}</h3>
+        <p class="text-gray-600">{$desc}</p>
+        {$btnHtml}
+    </div>
+</div>
+HTML;
+    }
+
+    private function renderImageText(array $p): string {
+        $twClasses = $this->getTwClasses($p);
+        $title = htmlspecialchars($p['title'] ?? '');
+        $content = htmlspecialchars($p['content'] ?? '');
+        $imgSrc = $p['image'] ?? '';
+        $pos = $p['imagePosition'] ?? 'left';
+
+        $imgHtml = $imgSrc 
+            ? "<img src=\"" . htmlspecialchars($imgSrc) . "\" class=\"w-full rounded-lg shadow-sm\" alt=\"{$title}\">" 
+            : "<div class=\"w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400\">Image Space</div>";
+        
+        $textHtml = "<div><h3 class=\"text-3xl font-bold mb-4\">{$title}</h3><p class=\"text-gray-600 prose prose-lg\">{$content}</p></div>";
+
+        $left = $pos === 'right' ? $textHtml : $imgHtml;
+        $right = $pos === 'right' ? $imgHtml : $textHtml;
+
+        return <<<HTML
+<div class="{$twClasses}">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>{$left}</div>
+        <div>{$right}</div>
+    </div>
+</div>
+HTML;
+    }
+
+    private function renderFaq(array $p): string {
+        $twClasses = $this->getTwClasses($p);
+        $heading = htmlspecialchars($p['heading'] ?? '');
+        $itemsHtml = '';
+        
+        foreach (($p['items'] ?? []) as $item) {
+            $q = htmlspecialchars($item['question'] ?? '');
+            $a = htmlspecialchars($item['answer'] ?? '');
+            $itemsHtml .= <<<HTML
+<div class="border-b border-gray-200 py-4" x-data="{ open: false }">
+    <button @click="open = !open" class="w-full flex justify-between items-center text-left focus:outline-none">
+        <h4 class="font-bold text-lg text-gray-900">{$q}</h4>
+        <svg x-show="!open" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+        <svg x-show="open" style="display:none;" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+    </button>
+    <div x-show="open" x-transition class="mt-4 text-gray-600 prose">
+        <p>{$a}</p>
+    </div>
+</div>
+HTML;
+        }
+
+        return <<<HTML
+<div class="{$twClasses}">
+    <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">{$heading}</h2>
+        <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+            {$itemsHtml}
+        </div>
+    </div>
+</div>
+HTML;
     }
 
     private function renderSpacer(array $p): string {

@@ -13,6 +13,8 @@ class ComponentRegistry {
                 'image' => self::image(),
                 'video' => self::video(),
                 'button' => self::button(),
+                'card' => self::card(),
+                'image_text' => self::imageText(),
             ],
             'business' => [
                 'hero' => self::hero(),
@@ -22,6 +24,7 @@ class ComponentRegistry {
                 'contact_form' => self::contactForm(),
                 'map' => self::map(),
                 'gallery' => self::gallery(),
+                'faq' => self::faq(),
             ],
             'global' => [
                 'navbar' => self::navbar(),
@@ -157,6 +160,72 @@ class ComponentRegistry {
                 ['key' => 'alt', 'type' => 'text', 'label' => 'Alt Text'],
                 ['key' => 'width', 'type' => 'select', 'label' => 'Width', 'options' => ['small','medium','large','full']],
                 ['key' => 'link', 'type' => 'text', 'label' => 'Link URL'],
+            ],
+        ];
+    }
+
+    private static function card(): array {
+        return [
+            'label' => 'Card',
+            'icon' => 'tablet',
+            'defaults' => [
+                'title' => 'Card Title',
+                'description' => 'A brief description inside the card.',
+                'image' => '',
+                'buttonText' => 'Read More',
+                'buttonLink' => '#',
+                'classes' => '',
+                '_tw' => ['bg' => 'bg-white', 'shadow' => 'shadow-md', 'rounded' => 'rounded-lg', 'padding' => 'p-6']
+            ],
+            'schema' => [
+                ['key' => 'title', 'type' => 'text', 'label' => 'Card Title'],
+                ['key' => 'description', 'type' => 'textarea', 'label' => 'Description'],
+                ['key' => 'image', 'type' => 'image', 'label' => 'Image (Optional)'],
+                ['key' => 'buttonText', 'type' => 'text', 'label' => 'Button Text'],
+                ['key' => 'buttonLink', 'type' => 'text', 'label' => 'Button Link'],
+            ],
+        ];
+    }
+
+    private static function imageText(): array {
+        return [
+            'label' => 'Image + Text',
+            'icon' => 'layout',
+            'defaults' => [
+                'title' => 'Feature Title',
+                'content' => 'Describe your feature here. Highlight why it is useful for the customer.',
+                'image' => '',
+                'imagePosition' => 'left',
+                'classes' => '',
+                '_tw' => ['padding' => 'p-12']
+            ],
+            'schema' => [
+                ['key' => 'title', 'type' => 'text', 'label' => 'Title'],
+                ['key' => 'content', 'type' => 'textarea', 'label' => 'Content'],
+                ['key' => 'image', 'type' => 'image', 'label' => 'Image'],
+                ['key' => 'imagePosition', 'type' => 'select', 'label' => 'Image Position', 'options' => ['left', 'right']],
+            ],
+        ];
+    }
+
+    private static function faq(): array {
+        return [
+            'label' => 'FAQ / Accordion',
+            'icon' => 'help-circle',
+            'defaults' => [
+                'heading' => 'Frequently Asked Questions',
+                'items' => [
+                    ['question' => 'How does this work?', 'answer' => 'This is a sample answer.'],
+                ],
+                'classes' => '',
+                '_tw' => ['padding' => 'p-12']
+            ],
+            'schema' => [
+                ['key' => 'heading', 'type' => 'text', 'label' => 'Heading'],
+                ['key' => 'items', 'type' => 'repeater', 'label' => 'Questions', 'fields' => [
+                    ['key' => 'question', 'type' => 'text', 'label' => 'Question'],
+                    ['key' => 'answer', 'type' => 'textarea', 'label' => 'Answer'],
+                ]],
             ],
         ];
     }

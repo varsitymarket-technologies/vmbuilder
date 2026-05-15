@@ -481,6 +481,45 @@ const app = createApp({
                     const st = p.style === 'outline' ? `border:2px solid ${p.color||'#3b82f6'};color:${p.color||'#3b82f6'};background:transparent` : `background:${p.color||'#3b82f6'};color:white`;
                     return `<div class="text-${p.alignment||'left'} ${twClasses}"><span style="${st};padding:10px 24px;border-radius:6px;font-weight:600;display:inline-block">${esc(p.text||'Button')}</span></div>`;
                 },
+                card: () => {
+                    const img = p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title||'')}" class="w-full h-48 object-cover rounded-t-lg">` : '';
+                    return `<div class="${twClasses}">
+                        ${img}
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">${esc(p.title||'')}</h3>
+                            <p class="text-gray-600 mb-4">${esc(p.description||'')}</p>
+                            ${p.buttonText ? `<a href="${esc(p.buttonLink||'#')}" class="text-blue-600 font-semibold hover:underline">${esc(p.buttonText)} &rarr;</a>` : ''}
+                        </div>
+                    </div>`;
+                },
+                image_text: () => {
+                    const imgHtml = p.image ? `<img src="${esc(p.image)}" class="w-full rounded-lg shadow-sm">` : `<div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400">Image Space</div>`;
+                    const textHtml = `<div>
+                        <h3 class="text-3xl font-bold mb-4">${esc(p.title||'')}</h3>
+                        <p class="text-gray-600">${esc(p.content||'')}</p>
+                    </div>`;
+                    const left = p.imagePosition === 'right' ? textHtml : imgHtml;
+                    const right = p.imagePosition === 'right' ? imgHtml : textHtml;
+                    return `<div class="${twClasses} grid md:grid-cols-2 gap-8 items-center">
+                        ${left}
+                        ${right}
+                    </div>`;
+                },
+                faq: () => {
+                    const items = (p.items||[]).map(i => `
+                        <div class="border-b border-gray-200 py-4">
+                            <h4 class="font-bold text-lg cursor-pointer flex justify-between items-center">
+                                ${esc(i.question||'')} 
+                                <span>+</span>
+                            </h4>
+                            <p class="text-gray-600 mt-2">${esc(i.answer||'')}</p>
+                        </div>
+                    `).join('');
+                    return `<div class="${twClasses}">
+                        <h2 class="text-3xl font-bold text-center mb-8">${esc(p.heading||'')}</h2>
+                        <div class="max-w-3xl mx-auto">${items}</div>
+                    </div>`;
+                },
                 section: () => {
                     const bgStyle = p.backgroundImage ? `background:url('${p.backgroundImage}');background-size:cover` : (!twClasses.includes('bg-') ? `background:${p.backgroundColor||'#fff'}` : '');
                     const pdTop = !twClasses.includes('p') && !twClasses.includes('py') && !twClasses.includes('pt') ? `padding-top:${p.paddingTop||60}px;` : '';
